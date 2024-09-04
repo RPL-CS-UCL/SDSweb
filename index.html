@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F28Q22D1LS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F28Q22D1LS');
+  </script>
+  <meta charset="utf-8">
+  <meta name="description" content="DiPPeR: Diffusion-based 2D Path Planner applied on Legged Robots">
+  <meta name="keywords" content="Path Planing, Diffusion, Quadrupedal Robots">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DiPPeST: Diffusion-based Path Planner for Synthesizing&#10; Trajectories Applied on Quadruped Robots</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="./static/js/ajax.googleapis.com_ajax_libs_jquery_3.5.1_jquery.min.js"></script>
+  <script src="./static/js/isInViewport.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link rel="icon" href="./favicon.ico?">
+  
+</head>
+<body>
+  
+  
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DiPPeST: Diffusion-based Path Planner for Synthesizing Trajectories Applied on Quadruped Robots</h1>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="https://rpl-as-ucl.github.io/people/">Maria Stamatopoulou*</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://rpl-as-ucl.github.io/people/">Jianwei Liu*</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://dkanou.github.io/">Dimitrios Kanoulas</a>
+              <br><br>
+              <p>
+                Robot Perception Lab (<a href="https://rpl-as-ucl.github.io">RPL</a>), Computer Science @ UCL.
+              </p>
+              <br>
+              <img src="./resources/planning_rw.png" width="1000"></img>
+              <!-- <span class="brmod"><b>ICRA 2024 Submission</b></span> -->
+              <br><br>
+              <p>
+              Code Release ETA: End of June
+              </p>
+            </span>
+          </div>
+
+<div class="column has-text-centered">
+<!-- arXiv Link. -->
+  <span class="link-block">
+    <a href="https://arxiv.org/abs/2405.19232"
+      class="external-link button is-normal is-rounded is-dark">
+      <span class="icon">
+        <i class="ai ai-arxiv"></i>
+      </span>
+      <span>Paper</span>
+    </a>
+  </span>
+
+  <!-- Video Link. -->
+  <span class="link-block">
+    <a href="https://youtu.be/pf0-BJ6b3ow"
+      class="external-link button is-normal is-rounded is-dark">
+      <span class="icon">
+        <i class="fab fa-youtube"></i>
+      </span>
+      <span>Video</span>
+    </a>
+  </span>
+</div>       
+  
+<section class="section">
+  <div class="container">
+    <br>
+    <br>
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h3 class="title is-2">Abstract</h3>
+        <div class="content has-text-justified">
+          <p>
+          We present DiPPeST, a novel image and goal conditioned diffusion-based trajectory generator for quadrupedal robot path planning. DiPPeST is a zero-shot adaptation of our previously introduced diffusion-based 2D global trajectory generator (<a href="https://rpl-cs-ucl.github.io/DiPPeR/">DiPPeR</a>). The introduced system incorporates a novel strategy for local real-time path refinements, that is re- active to camera input, without requiring any further training, image processing, or environment interpretation techniques. DiPPeST achieves 92% success rate in obstacle avoidance for nominal environments and an average of 88% success rate when tested in environments that are up to 3.5 times more complex in pixel variation than DiPPeR. A visual-servoing framework is developed to allow for real-world execution, tested on the quadruped robot, achieving 80% success rate in different environments and showcasing improved behavior than complex state-of-the-art local planners, in narrow environments.
+          </p>
+          <p>
+            DiPPeST is a zero-shot transfer model trained purely on black and white mazes with a top-down view, presented below. In the following sections, we present DiPPeST's performance and generalization capabilities in different camera input scenarios to perform real-time vision-based local planning.
+          </p>
+          <br></br>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/dipper/VAL_1_short.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/dipper/VAL_4_midium.mp4" width="100%"
+                style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/dipper/LONGUSE2.mp4" width="100%"
+                        style="border-radius:10px; "></video>
+                </div>
+                <br></br>
+              </div>
+              <br></br>
+            </td>
+        </div>
+        <div class="is-centered">
+          <!--<center>
+          <video autoplay muted loop playsinline controls poster="./resources/loading-icon.gif" style="width: 95%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+          <source src="./resources/real_world/map2spot.mp4" type="video/mov">
+          </video>
+          </center>--> 
+      </div>
+      </div>
+    </div>
+  </div>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <br>
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 12px;">Generalisation Performance</h2>
+        <br>
+        <h3>
+          <center>
+            We validate DiPPeST's generalization capabilities for variations in image input size, pixel intensity variation, and point of view. This will test the ability of the model to generate trajectories in RGB egocentric scenarios, with the obstacle and traversable regions being of similar colors.
+          </center>
+        </h3>
+        <br></br>
+        </tr>
+        <h3 class="title" style="text-align: center; padding-bottom: 7px;"> 1. Variation of Image Pixel Intensity</h3>
+        <br>
+        <h5>
+          <center>
+            We investigate the cases where the obstacles are similar in pixel intensity (PI) to the traversable region, as well as the case of the traversable region including pixels of multiple intensities, to showcase that DiPPeST can generate paths from RGB input beyond the white traversable and black non-traversable regions of the training dataset.</h5>
+         </center>
+        </h5>
+        <br></br>
+        <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/edge_cases/edge1u.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/edge_cases/edge2u.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/edge_cases/edge3u.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+              <br></br>
+            </div>
+          </td>
+        </tr>
+        <td>
+          <div class="row">
+            <div class="col">
+                <h5> Obstacle-Floor PI Difference = 26%</h5>
+            </div>
+            <div class="col">
+              <h5> Obstacle-Floor PI Difference = 28%</h5>
+            </div>
+            <div class="col">
+              <h5> Image PI Variation = 82% </h5>
+            </div>
+            <br></br>
+          </div>
+        </td>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title" style="text-align: center; padding-bottom: 7px;">2. Variation of Input Image Size</h3>
+        <h5>
+        <center>
+          DiPPeST performs local refinements based on visual input, hence being subject to variable camera FoV based on hardware specifications.
+        </center>
+        </h5>
+          <br>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/size/size1.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/size/size2.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/size/size3.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <td>
+          <div class="row">
+            <div class="col">
+              <h5> Training Dataset: [100,3,3]</h5>
+            </div>
+            <div class="col">
+              <h5> iPhone 11 Camera: [3264,2448,3] </h5>
+            </div>
+            <div class="col">
+              <h5>  RealSense D435i Camera [720,1280,3] </h5>
+            </div>
+            <br></br>
+          </div>
+        </td>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title" style="text-align: center; padding-bottom: 7px;">3. Variation of Camera Point-of-View</h3>
+        <h5>
+          <center>
+            DiPPeST should generalize to input images of varying PoV, reflecting variations in camera angle for real-world scenarios. The training dataset includes top-down maps, hence proving generalization from an egocentric perspective is essential to achieve local refinements.
+          </center>
+        </h5>
+        <br></br>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/pov/pov1.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/pov/pov2.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/pov/pov3.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+        <td>
+          <div class="row">
+            <div class="col">
+              <h5> Top-Down</h5>
+            </div>
+            <div class="col">
+              <h5> Human-View </h5>
+            </div>
+            <div class="col">
+              <h5>Robot-View</h5>
+            </div>
+            <br></br>
+          </div>
+        </td>
+      </div> 
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <br> <br>
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Real World Deployment</h2>
+         <h5>
+            <center>
+              For real-world evaluation, the Unitree Go1 robot is used with DiPPeST, taking input images from an Intel RealSense D435i camera mounted on the front at an angle of 10 degrees depression. For all experiments, the global plan is generated from the first frame while the robot remains stationary and at each frame a local path is generated to perform real-time refinements. We test DiPPeST’s performance in a) static environments and b) dynamic environments.
+            </center>
+         </h5>
+         <br></br>
+         <h3>1. Static Environments</h3>
+        <br></br>
+          <td>
+              <div class="row">
+                <div class="column">
+                  <video autoplay muted loop playsinline controls src="./resources/real_world/static1.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+                  </div>
+                <div class="column">
+                  <video autoplay muted loop playsinline controls src="./resources/real_world/static2.mp4" width="100%"
+                          style="border-radius:10px; "></video>
+                  </div>
+              </div>
+          <br></br>
+            <br>
+          </td>
+        </tr>
+        <br></br>
+        <h3>2. Dynamic Environments</h3>
+        <br></br>
+        <td>
+          <div class="row">
+              <video autoplay muted loop playsinline controls src="./resources/real_world/dynamic.mp4" width="100%"
+                     style="border-radius:10px; "></video>
+          </div>
+          <!-- <div class="row">
+            <video autoplay muted loop playsinline controls src="./resources/real_world/real2.mov" width="100%"
+                   style="border-radius:10px; "></video>
+          </div>
+          <div class="row">
+            <video autoplay muted loop playsinline controls src="./resources/real_world/real3.mov" width="100%"
+                   style="border-radius:10px; "></video>
+        </div> -->
+        <br>
+      </td>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container content">
+    <div align="left";>
+
+    <h2 class="titile">BibTeX</h2>
+    <pre><code>
+      @article{liu2024dipper,
+      title     = {DiPPeR: Diffusion-based 2D Path Planner applied on Legged Robots},
+      author    = {Jianwei Liu, Maria Stamatopoulou, Dimitrios Kanoulas},
+      journal   = {arXiv preprint arXiv:2309.14341},
+      year      = {2024}
+}
+</div>
+</code></pre>
+  </div>
+</section> -->
+
+</body>
+
+</html>
