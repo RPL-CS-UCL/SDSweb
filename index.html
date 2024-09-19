@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F28Q22D1LS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-F28Q22D1LS');
   </script>
   <meta charset="utf-8">
-  <meta name="description" content="SDS: See it. Do it. Sorted Quadruped Skill Synthesis from Single Video Demonstration.">
+  <meta name="description"
+    content="SDS: See it. Do it. Sorted Quadruped Skill Synthesis from Single Video Demonstration.">
   <meta name="keywords" content="Skill Imitation, VLMs, Quadrupedal Robots">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SDS: Quadruped Skill Synthesis from Single Video Demonstration</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -25,7 +26,8 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="./static/js/ajax.googleapis.com_ajax_libs_jquery_3.5.1_jquery.min.js"></script>
@@ -36,338 +38,378 @@
   <script src="./static/js/index.js"></script>
 
   <link rel="icon" href="./favicon.ico?">
-  
+
 </head>
+
 <body>
-  
-  
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">SDS : See it. Do it. Sorted</h1>
-          <h2 class="title is-1 publication-title">Quadruped Skill Synthesis from Single Video Demonstration</h2>
-          <div class="is-size-4 publication-authors">
-            <span class="author-block">
-              <a href="https://rpl-as-ucl.github.io/people/">Jeffrey Li*</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://rpl-as-ucl.github.io/people/">Maria Stamatopoulou*</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://dkanou.github.io/">Dimitrios Kanoulas</a>
-              <br><br>
-              <p>
-                Robot Perception Lab (<a href="https://rpl-as-ucl.github.io">RPL</a>), Computer Science @ UCL.
-              </p>
-              <br>
-              <img src="./resources/planning_rw.png" width="1000"></img>
-              <!-- <span class="brmod"><b>ICRA 2024 Submission</b></span> -->
-              <br><br>
-            </span>
-          </div>
 
-<div class="column has-text-centered">
-<!-- arXiv Link. -->
-  <span class="link-block">
-    <a href="https://arxiv.org/abs/2405.19232"
-      class="external-link button is-normal is-rounded is-dark">
-      <span class="icon">
-        <i class="ai ai-arxiv"></i>
-      </span>
-      <span>Paper</span>
-    </a>
-  </span>
 
-  <!-- Code Link. -->
-  <span class="link-block">
-    <a href="https://github.com/JeliPenguin/SDS_Repo"
-      class="external-link button is-normal is-rounded is-dark">
-      <span class="icon">
-        <i class="fab fa-github"></i>
-      </span>
-      <span>Code</span>
-    </a>
-  </span>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <img src="./resources/ucl.png" width="150"></img>
+        <img src="./resources/rpl-logo.png" width="150"></img>
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-subtitle">SDS : See it. Do it. Sorted</h1>
+            <h2>Quadruped Skill Synthesis from Single Video Demonstration</h2>
+            <br>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">
+                <a href="https://rpl-as-ucl.github.io/people/">Jeffrey
+                  Li*</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://rpl-as-ucl.github.io/people/">Maria
+                  Stamatopoulou*</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://dkanou.github.io/">Dimitrios Kanoulas</a>
+                <br> <br>
+                <p>
+                  Robot Perception Lab (<a href="https://rpl-as-ucl.github.io">RPL</a>), Computer Science @ UCL.
+                </p>
+                <!-- <span class="brmod"><b>ICRA 2025 Submission</b></span> -->
+                <br>
+              </span>
+            </div>
 
-    <!-- Video Link. -->
-    <span class="link-block">
-      <a href="https://youtu.be/pf0-BJ6b3ow"
-        class="external-link button is-normal is-rounded is-dark">
-        <span class="icon">
-          <i class="fab fa-youtube"></i>
-        </span>
-        <span>Video</span>
-      </a>
-    </span>
-</div>       
-  
-<section class="section">
-  <div class="container">
-    <br>
-    <br>
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-two-thirds">
-        <h3 class="title is-2">Abstract</h3>
-        <div class="content has-text-justified">
-          <p>
-          We present DiPPeST, a novel image and goal conditioned diffusion-based trajectory generator for quadrupedal robot path planning. DiPPeST is a zero-shot adaptation of our previously introduced diffusion-based 2D global trajectory generator (<a href="https://rpl-cs-ucl.github.io/DiPPeR/">DiPPeR</a>). The introduced system incorporates a novel strategy for local real-time path refinements, that is re- active to camera input, without requiring any further training, image processing, or environment interpretation techniques. DiPPeST achieves 92% success rate in obstacle avoidance for nominal environments and an average of 88% success rate when tested in environments that are up to 3.5 times more complex in pixel variation than DiPPeR. A visual-servoing framework is developed to allow for real-world execution, tested on the quadruped robot, achieving 80% success rate in different environments and showcasing improved behavior than complex state-of-the-art local planners, in narrow environments.
-          </p>
-          <p>
-            DiPPeST is a zero-shot transfer model trained purely on black and white mazes with a top-down view, presented below. In the following sections, we present DiPPeST's performance and generalization capabilities in different camera input scenarios to perform real-time vision-based local planning.
-          </p>
-          <br></br>
-          <td>
-            <div class="row">
-              <div class="col">
-                  <video autoplay muted loop playsinline controls src="./resources/dipper/VAL_1_short.mp4" width="100%"
-                         style="border-radius:10px; "></video>
-              </div>
-              <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/dipper/VAL_4_midium.mp4" width="100%"
-                style="border-radius:10px; "></video>
-              </div>
-              <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/dipper/LONGUSE2.mp4" width="100%"
-                        style="border-radius:10px; "></video>
-                </div>
-                <br></br>
-              </div>
-              <br></br>
-            </td>
-        </div>
-        <div class="is-centered">
-          <!--<center>
+            <div class="column has-text-centered">
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2405.19232" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/RPL-CS-UCL/SDS" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/14R1THNhljLcxqEcMRri1u39EBMnCKDe5/view?usp=sharing" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+
+            <section class="section">
+              <div class="container">
+                <br>
+                <br>
+                <!-- Abstract. -->
+                <div class="columns is-centered has-text-centered">
+                  <div class="column is-two-thirds">
+                    <h3 class="title is-2">Abstract</h3>
+                    <div class="content has-text-justified">
+                      <p>
+                        we present SDS, a novel pipeline for intuitive quadrupedal skill learning from a single
+                        demonstration video, leveraging the Visual capabilities of GPT-4o.
+                      </p>
+                      <img src="./resources/figures/method.png" width="900"></img>
+                      <p>
+                        SDS processes input videos through our novel chain-of-thought promoting technique (SUS) and
+                        generates executable reward functions (RFs) that drive the imitation of locomotion skills,
+                        through learning a Proximal Policy Optimization (PPO)-based Reinforcement Learning (RL) policy,
+                        using environment information from the NVIDIA IsaacGym simulator. SDS autonomously evaluates the
+                        RFs by monitoring the individual reward components and supplying training footage and fitness
+                        metrics back into GPT-4o, which is then prompted to evolve the RFs to achieve higher task
+                        fitness at each iteration. We validate our method on the Unitree Go1 robot, demonstrating its
+                        ability to execute variable skills such as trotting, bounding, pacing and hopping, achieving
+                        high imitation fidelity and locomotion stability. SDS shows improvements over SOTA methods in
+                        task adaptability, reduced dependence on domain-specific knowledge, and bypassing the need for
+                        labor-intensive reward engineering and large-scale training datasets.
+                      </p>
+                      <br></br>
+                    </div>
+                    <div class="is-centered">
+                      <!--<center>
           <video autoplay muted loop playsinline controls poster="./resources/loading-icon.gif" style="width: 95%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
           <source src="./resources/real_world/map2spot.mp4" type="video/mov">
           </video>
-          </center>--> 
-      </div>
-      </div>
-    </div>
-  </div>
+          </center>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <section class="section">
+                <div class="container">
+                  <div class="columns is-centered">
+                    <div class="column is-full-width">
+                      <br>
+                      <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">SDS Simulation
+                        Performance</h2>
+                      <br>
+                      <h5>
+                        <center>
+                          We run the best PPO policies in the IsaacGym environment using a simulated Go1 Unitree Robot.
+                        </center>
+                      </h5>
+                      <br>
+                      <style>
+                        .center-content {
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          flex-direction: column;
+                          text-align: center;
+                        }
+
+                        .video-wrapper {
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          margin-bottom: 20px;
+                          /* Adds space between the videos */
+                        }
+
+                        .video-wrapper video {
+                          width: 80%;
+                          /* Ensures consistent width for both columns */
+                          height: 300px;
+                          /* Set equal height for all videos */
+                        }
+
+                        .video-wrapper.simulation video {
+                          width: 100%;
+                          /* Adjusts the width for SDS Simulation videos */
+                          height: 300px;
+                          /* Set equal height for all videos */
+                        }
+
+                        .table-wrapper {
+                          display: flex;
+                          justify-content: center;
+                          /* Centers the entire table */
+                          margin: 0 auto;
+                          /* Ensures the table is centered on the page */
+                        }
+
+                        table {
+                          width: 80%;
+                          /* Adjust width as necessary */
+                        }
+
+                        .row-title {
+                          text-align: center;
+                          font-weight: bold;
+                          font-size: 16px;
+                          margin-bottom: 10px;
+                        }
+                      </style>
+
+                      <div class="table-wrapper">
+                        <table>
+                          <!-- Row 1: Title -->
+                          <tr>
+                            <td colspan="2">
+                              <div class="row-title 10px"> 1. Trotting</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <!-- Column 1: Demonstration Video -->
+                            <td>
+                              <div class="center-content">
+                                <div class="video-wrapper">
+                                  <video autoplay muted loop playsinline controls src="./resources/demo/trot.mp4"
+                                    style="border-radius:10px;"></video>
+                                </div>
+                              </div>
+                            </td>
+                            <!-- Column 2: SDS Simulation Video -->
+                            <td>
+                              <div class="center-content">
+                                <div class="video-wrapper simulation">
+                                  <video id="sim-trot" autoplay muted loop playsinline controls
+                                    src="./resources/simualtion/trot.mp4" style="border-radius:10px;"></video>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          <!-- Row 2: Title -->
+                          <tr>
+                            <td colspan="2">
+                              <div class="row-title">2. Bounding</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <!-- Column 1: Demonstration Video -->
+                            <td>
+                              <div class="center-content">
+                                <div class="video-wrapper">
+                                  <video autoplay muted loop playsinline controls src="./resources/demo/running.mp4"
+                                    style="border-radius:10px;"></video>
+                                </div>
+                              </div>
+                            </td>
+                            <!-- Column 2: SDS Simulation Video -->
+                            <td>
+                              <div class="center-content">
+                                <div class="video-wrapper simulation">
+                                  <video autoplay muted loop playsinline controls src="./resources/simualtion/bound.mp4"
+                                    style="border-radius:10px;"></video>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          <!-- Row 3: Title -->
+                          <tr>
+                            <td colspan="2">
+                              <div class="row-title">3. Hopping</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <!-- Column 1: Demonstration Video -->
+                            <td>
+                              <div class="center-content">
+                                <div class="video-wrapper">
+                                  <video autoplay muted loop playsinline controls src="./resources/demo/hop.mp4"
+                                    style="border-radius:10px;"></video>
+                                </div>
+                              </div>
+                            </td>
+                            <!-- Column 2: SDS Simulation Video -->
+                            <td>
+                              <div class="center-content">
+                                <div class="video-wrapper simulation">
+                                  <video autoplay muted loop playsinline controls src="./resources/simualtion/hop.mp4"
+                                    style="border-radius:10px;"></video>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          <!-- Row 4: Title -->
+                          <tr>
+                            <td colspan="2">
+                              <div class="row-title">4. Pacing</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <!-- Column 1: Demonstration Video -->
+                            <td>
+                              <div class="center-content">
+                                <div class="video-wrapper">
+                                  <video autoplay muted loop playsinline controls src="./resources/demo/pace.mp4"
+                                    style="border-radius:10px;"></video>
+                                </div>
+                              </div>
+                            </td>
+                            <!-- Column 2: SDS Simulation Video -->
+                            <td>
+                              <div class="center-content">
+                                <div class="video-wrapper simulation">
+                                  <video id="sim-pace" autoplay muted loop playsinline controls
+                                    src="./resources/simualtion/pace.mp4" style="border-radius:10px;"></video>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <script>
+                // Slowing down the videos using JavaScript
+                document.getElementById('sim-pace').playbackRate = 0.5;  // Half speed (50% slower)
+                document.getElementById('sim-trot').playbackRate = 0.5;  // 75% speed (25% slower)
+              </script>
 
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full-width">
         <br>
-        <h2 class="title is-2" style="text-align: center; padding-bottom: 12px;">Generalisation Performance</h2>
-        <br>
-        <h3>
-          <center>
-            We validate DiPPeST's generalization capabilities for variations in image input size, pixel intensity variation, and point of view. This will test the ability of the model to generate trajectories in RGB egocentric scenarios, with the obstacle and traversable regions being of similar colors.
-          </center>
-        </h3>
-        <br></br>
-        </tr>
-        <h3 class="title" style="text-align: center; padding-bottom: 7px;"> 1. Variation of Image Pixel Intensity</h3>
-        <br>
-        <h5>
-          <center>
-            We investigate the cases where the obstacles are similar in pixel intensity (PI) to the traversable region, as well as the case of the traversable region including pixels of multiple intensities, to showcase that DiPPeST can generate paths from RGB input beyond the white traversable and black non-traversable regions of the training dataset.</h5>
-         </center>
-        </h5>
-        <br></br>
-        <td>
-            <div class="row">
-              <div class="col">
-                  <video autoplay muted loop playsinline controls src="./resources/edge_cases/edge1u.mp4" width="100%"
-                         style="border-radius:10px; "></video>
-              </div>
-              <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/edge_cases/edge2u.mp4" width="100%"
-                       style="border-radius:10px; "></video>
-              </div>
-              <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/edge_cases/edge3u.mp4" width="100%"
-                       style="border-radius:10px; "></video>
-              </div>
-              <br></br>
-            </div>
-          </td>
-        </tr>
-        <td>
-          <div class="row">
-            <div class="col">
-                <h5> Obstacle-Floor PI Difference = 26%</h5>
-            </div>
-            <div class="col">
-              <h5> Obstacle-Floor PI Difference = 28%</h5>
-            </div>
-            <div class="col">
-              <h5> Image PI Variation = 82% </h5>
-            </div>
-            <br></br>
-          </div>
-        </td>
-      </div> 
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h3 class="title" style="text-align: center; padding-bottom: 7px;">2. Variation of Input Image Size</h3>
-        <h5>
-        <center>
-          DiPPeST performs local refinements based on visual input, hence being subject to variable camera FoV based on hardware specifications.
-        </center>
-        </h5>
-          <br>
-          <td>
-            <div class="row">
-              <div class="col">
-                  <video autoplay muted loop playsinline controls src="./resources/size/size1.mp4" width="100%"
-                         style="border-radius:10px; "></video>
-              </div>
-              <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/size/size2.mp4" width="100%"
-                       style="border-radius:10px; "></video>
-              </div>
-              <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/size/size3.mp4" width="100%"
-                       style="border-radius:10px; "></video>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <td>
-          <div class="row">
-            <div class="col">
-              <h5> Training Dataset: [100,3,3]</h5>
-            </div>
-            <div class="col">
-              <h5> iPhone 11 Camera: [3264,2448,3] </h5>
-            </div>
-            <div class="col">
-              <h5>  RealSense D435i Camera [720,1280,3] </h5>
-            </div>
-            <br></br>
-          </div>
-        </td>
-      </div> 
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h3 class="title" style="text-align: center; padding-bottom: 7px;">3. Variation of Camera Point-of-View</h3>
-        <h5>
-          <center>
-            DiPPeST should generalize to input images of varying PoV, reflecting variations in camera angle for real-world scenarios. The training dataset includes top-down maps, hence proving generalization from an egocentric perspective is essential to achieve local refinements.
-          </center>
-        </h5>
-        <br></br>
-          <td>
-            <div class="row">
-              <div class="col">
-                  <video autoplay muted loop playsinline controls src="./resources/pov/pov1.mp4" width="100%"
-                         style="border-radius:10px; "></video>
-              </div>
-              <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/pov/pov2.mp4" width="100%"
-                       style="border-radius:10px; "></video>
-              </div>
-              <div class="col">
-                <video autoplay muted loop playsinline controls src="./resources/pov/pov3.mp4" width="100%"
-                       style="border-radius:10px; "></video>
-              </div>
-            </div>
-            <br>
-          </td>
-        </tr>
-        <td>
-          <div class="row">
-            <div class="col">
-              <h5> Top-Down</h5>
-            </div>
-            <div class="col">
-              <h5> Human-View </h5>
-            </div>
-            <div class="col">
-              <h5>Robot-View</h5>
-            </div>
-            <br></br>
-          </div>
-        </td>
-      </div> 
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <br> <br>
         <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Real World Deployment</h2>
-         <h5>
-            <center>
-              For real-world evaluation, the Unitree Go1 robot is used with DiPPeST, taking input images from an Intel RealSense D435i camera mounted on the front at an angle of 10 degrees depression. For all experiments, the global plan is generated from the first frame while the robot remains stationary and at each frame a local path is generated to perform real-time refinements. We test DiPPeST’s performance in a) static environments and b) dynamic environments.
-            </center>
-         </h5>
-         <br></br>
-         <h3>1. Static Environments</h3>
-        <br></br>
-          <td>
-              <div class="row">
-                <div class="column">
-                  <video autoplay muted loop playsinline controls src="./resources/real_world/static1.mp4" width="100%"
-                         style="border-radius:10px; "></video>
-                  </div>
-                <div class="column">
-                  <video autoplay muted loop playsinline controls src="./resources/real_world/static2.mp4" width="100%"
-                          style="border-radius:10px; "></video>
-                  </div>
-              </div>
-          <br></br>
-            <br>
-          </td>
-        </tr>
-        <br></br>
-        <h3>2. Dynamic Environments</h3>
-        <br></br>
-        <td>
-          <div class="row">
-              <video autoplay muted loop playsinline controls src="./resources/real_world/dynamic.mp4" width="100%"
-                     style="border-radius:10px; "></video>
-          </div>
-          <!-- <div class="row">
-            <video autoplay muted loop playsinline controls src="./resources/real_world/real2.mov" width="100%"
-                   style="border-radius:10px; "></video>
-          </div>
-          <div class="row">
-            <video autoplay muted loop playsinline controls src="./resources/real_world/real3.mov" width="100%"
-                   style="border-radius:10px; "></video>
-        </div> -->
+        <h5 style="text-align: center;">
+          We deploy all policies on the on-board computer of a Unitree Go1 robot, using a Docker architecture. We apply base tracking to verify the stability of the locmotion policies.
+        </h5>
         <br>
-      </td>
-      </div> 
+
+        <!-- Row 1: Trotting -->
+        <div class="center-content">
+          <h5 style="text-align: center;">1. Trotting</h5>
+          <div class="video-wrapper" style="text-align: center;">
+            <video id="real-trot" autoplay muted loop playsinline controls src="./resources/real_world/trotting_tracked 1.mp4" width="100%" style="border-radius:10px;"></video>
+          </div>
+        </div>
+        <br>
+
+        <!-- Row 2: Bounding -->
+        <div class="center-content">
+          <h5 style="text-align: center;">2. Bounding</h5>
+          <div class="video-wrapper" style="text-align: center;">
+            <video autoplay muted loop playsinline controls src="./resources/real_world/bound.mp4" width="100%" style="border-radius:10px;"></video>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- Row 3: Add more videos if needed -->
+                 <!-- Row 2: Bounding -->
+        <div class="center-content">
+          <h5 style="text-align: center;">3. Hopping</h5>
+          <div class="video-wrapper" style="text-align: center;">
+            <video id="real-hop" autoplay muted loop playsinline controls src="./resources/real_world/hopping_tracked.mp4" width="100%" style="border-radius:10px;"></video>
+          </div>
+        </div>
+
+        <br>
+
+      <!-- Row 3: Add more videos if needed -->
+        <!-- Row 2: Bounding -->
+        <div class="center-content">
+        <h5 style="text-align: center;">4. Pacing</h5>
+        <div class="video-wrapper" style="text-align: center;">
+          <video id="real-pace" autoplay muted loop playsinline controls src="./resources/real_world/pace.mp4" width="100%" style="border-radius:10px;"></video>
+        </div>
+      </div>
+
+      <script>
+        // Slowing down the videos using JavaScript
+        document.getElementById('real-pace').playbackRate = 0.5;  // Half speed (50% slower)
+        document.getElementById('real-trot').playbackRate = 0.5;  // 75% speed (25% slower)
+        document.getElementById('real-hop').playbackRate = 0.75; 
+      </script>
+
+
+      </div>
     </div>
   </div>
 </section>
 
-<!-- <section class="section" id="BibTeX">
-  <div class="container content">
-    <div align="left";>
 
-    <h2 class="titile">BibTeX</h2>
-    <pre><code>
-      @article{liu2024dipper,
-      title     = {DiPPeR: Diffusion-based 2D Path Planner applied on Legged Robots},
-      author    = {Jianwei Liu, Maria Stamatopoulou, Dimitrios Kanoulas},
+  <section class="section" id="BibTeX">
+    <div class="container content">
+      <div align="left" ;>
+
+        <h2 class="titile">BibTeX</h2>
+        <pre><code>
+      @article{li2024sds,
+      title     = {SDS- See it. Do it. Sorted: Quadruped Skill Synthesis from Single Video Demonstration},
+      author    = {Jeffrey Li, Maria Stamatopoulou, Dimitrios Kanoulas},
       journal   = {arXiv preprint arXiv:2309.14341},
       year      = {2024}
 }
 </div>
 </code></pre>
-  </div>
-</section> -->
+      </div>
+  </section>
 
 </body>
 
