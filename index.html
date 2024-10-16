@@ -74,7 +74,7 @@
             <div class="column has-text-centered">
               <!-- arXiv Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2405.19232" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/abs/2410.11571" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
@@ -94,7 +94,7 @@
 
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://drive.google.com/file/d/14R1THNhljLcxqEcMRri1u39EBMnCKDe5/view?usp=sharing" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://youtu.be/_it1WIhjLtA?si=oWAm2-XTzhAvEWtn" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fab fa-youtube"></i>
                   </span>
@@ -114,21 +114,17 @@
                     <h3 class="title is-2">Abstract</h3>
                     <div class="content has-text-justified">
                       <p>
-                        we present SDS, a novel pipeline for intuitive quadrupedal skill learning from a single
-                        demonstration video, leveraging the Visual capabilities of GPT-4o.
-                      </p>
-                      <p>
-                        SDS processes input videos through our novel chain-of-thought promoting technique (SUS) and
-                        generates executable reward functions (RFs) that drive the imitation of locomotion skills,
-                        through learning a Proximal Policy Optimization (PPO)-based Reinforcement Learning (RL) policy,
-                        using environment information from the NVIDIA IsaacGym simulator. SDS autonomously evaluates the
-                        RFs by monitoring the individual reward components and supplying training footage and fitness
-                        metrics back into GPT-4o, which is then prompted to evolve the RFs to achieve higher task
-                        fitness at each iteration. We validate our method on the Unitree Go1 robot, demonstrating its
-                        ability to execute variable skills such as trotting, bounding, pacing and hopping, achieving
-                        high imitation fidelity and locomotion stability. SDS shows improvements over SOTA methods in
-                        task adaptability, reduced dependence on domain-specific knowledge, and bypassing the need for
-                        labor-intensive reward engineering and large-scale training datasets.
+                        We present SDS (``See it. Do it. Sorted.''), a novel pipeline for intuitive quadrupedal skill learning
+                        from a single demonstration video. Leveraging the Visual capabilities of GPT-4o, SDS processes input
+                        videos through our novel chain-of-thought promoting technique (SUS) and generates executable reward
+                        functions (RFs) that drive the imitation of locomotion skills, through learning a Proximal Policy Optimization 
+                        (PPO)-based Reinforcement Learning (RL) policy, using environment information from the NVIDIA IsaacGym simulator. 
+                        SDS autonomously evaluates the RFs by monitoring the individual reward components and supplying training footage 
+                        and fitness metrics back into GPT-4o, which is then prompted to evolve the RFs to achieve higher task fitness at 
+                        each iteration. We validate our method on the Unitree Go1 robot, demonstrating its ability to execute variable 
+                        skills such as trotting, bounding, pacing and hopping, achieving high imitation fidelity and locomotion stability. 
+                        SDS shows improvements over SOTA methods in task adaptability, reduced dependence on domain-specific knowledge, and 
+                        bypassing the need for labor-intensive reward engineering and large-scale training datasets. 
                       </p>
                       <br></br>
                     </div>
@@ -401,10 +397,10 @@
 
         <h2 class="titile">BibTeX</h2>
         <pre><code>
-      @article{li2024sds,
-      title     = {SDS- See it. Do it. Sorted: Quadruped Skill Synthesis from Single Video Demonstration},
+      @article{Li2024SDS,
+      title     = {SDS - See it. Do it. Sorted: Quadruped Skill Synthesis from Single Video Demonstration},
       author    = {Jeffrey Li, Maria Stamatopoulou, Dimitrios Kanoulas},
-      journal   = {arXiv preprint arXiv:2309.14341},
+      journal   = {arXiv preprint arXiv:2410.11571},
       year      = {2024}
 }
 </div>
